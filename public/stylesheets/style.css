@@ -1,9 +1,9 @@
 body {
-  background-color: black ;
+  background-color: #351330;
   background-image: url("/images/logo.gif") ;
   background-repeat: no-repeat ;
   background-position: top right ;
-  color: yellow ;
+  color: #E8CAA4;
   font-family: "Futura", "Gill Sans" ;
   font-size: 1.5em ;
   padding-left: 76px ;
@@ -26,13 +26,13 @@ h1 {
 }
 
 a {
-  background-color: #080818 ;
-  color: yellow ;
+  background-color: #351330;
+  color: #E8CAA4;
   text-decoration: none ;
 }
 a:hover {
-  color: black ;
-  background-color: yellow ;
+  color: #351330;
+  background-color: #E8CAA4;
 }
 
 table {
@@ -43,16 +43,35 @@ table {
 th {
   border-style: dotted ;
   border-width: 1px ;
-  border-color: yellow ;
+  border-color: #E8CAA4;
   font-variant: small-caps ;
   text-align: left ;
   padding: 10px ;
 }
 
 td {
-  padding: 10px ;
-  border-style: dotted ;
-  border-width: 1px ;
-  border-color: yellow ;
+  padding: 10px;
+  border-style: dotted;
+  border-width: 1px;
+  border-color: #E8CAA4;
 }
 
+fieldset {
+  border: none;
+}
+
+.ctrlHolder {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input {
+  background-color: #351330;
+  color: #E8CAA4;
+  font-size: 120%;
+}
+
+input[type="submit"] {
+  float: left;
+  margin-left: 20px;
+}
