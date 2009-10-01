@@ -1,0 +1,23 @@
+<div class="nav">
+  <%= link_to("new task", :controller => :tasks, :action => :new) %>
+</div>
+
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Expected</th>
+    <th>Actual</th>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.description %></td>
+      <td><%= task.expected %></td>
+      <td><%= task.actual %></td>
+      <td><%= link_to("edit", edit_task_url(task.id), :class => "task_link") %></td>
+      <td><%= link_to("delete", task_url(task), :method => :delete, :class => "task_link") %></td>
+    </tr>
+  <% end %>
+</table>
