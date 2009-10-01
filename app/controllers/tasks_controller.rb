@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
 
-  def list
-    @tasks = Task.find(:all)
+  before_filter :find_task, :only => ['edit', 'update', 'destroy']
+
+  def index
+    @tasks = Task.all
   end
 
   def new
@@ -10,17 +12,32 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
+
     if @task.save
-      redirect_to :action => :list
+      redirect_to :action => 'index'
     else
-      render :action => :new
+      render :action => 'new'
     end
   end
 
   def edit
   end
 
+  def update
+    if @task.update_attributes(params[:task])
+      redirect_to :action => 'index'
+    else
+      render :action => 'edit'
+    end
+  end
+
   def destroy
   end
-end
 
+  protected
+
+  def find_task
+    @task = Task.find(params[:id])
+  end
+
+end
