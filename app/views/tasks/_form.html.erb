@@ -1,0 +1,24 @@
+<% form_for task do |f| %>
+  <fieldset>
+    <div class="ctrlHolder">  
+      <%= f.label 'description' %> <br />
+      <%= f.text_field 'description' %>
+    </div>
+
+    <div class="ctrlHolder">
+      <%= f.label 'expected' %> <br />
+      <%= f.text_field 'expected' %>
+    </div>
+
+    <% if request['action'] == 'edit' -%>
+      <div class="ctrlHolder">
+        <%= f.label 'actual' %> <br />
+        <%= f.text_field 'actual' %>
+      </div>
+    <% end -%>
+  </fieldset>
+
+  <div class="ctrlHolder">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
